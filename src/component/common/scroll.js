@@ -18,7 +18,8 @@ export default class Scroll extends React.Component{
     _initScroll(){
         if(!this.scroll){
             this.scroll = new Bscroll(this.refs.scrollWrap,{
-                probeType:this.props.probeType || 2
+                probeType:this.props.probeType || 2,
+                click : true
             })
         } else {
             this.scroll.refresh();

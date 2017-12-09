@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom'
 import css from './router.styl'
 
-import Good from 'component/Good/good'
+import GoodWrap from 'component/goodwrap/goodwrap'
 import Scroll from '../common/scroll'
 class Routers extends React.Component{
     render(){
@@ -27,7 +27,7 @@ class Routers extends React.Component{
                     <Route  exact  path="/"  render={() => (
                         <Redirect to="/Good"/>
                     )}/>
-                    <Route path='/Good' component={Good}></Route>
+                    <Route  path='/Good' component={GoodWrap}/>
                     <Route  path="/comment" component={Comment}/>
                     <Route  path="/seller" component={Seller}/>
                 </div>
