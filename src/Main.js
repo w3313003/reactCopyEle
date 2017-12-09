@@ -1,11 +1,14 @@
-import Rheader from './header/header'
 import React from 'react'
-import { HashRouter as Router,  Route,  Link } from 'react-router-dom'
-
+import Rheader from './component/header/header'
+import Routers from './component/router/router'
+import css from './index.css'
 class Main extends React.Component{
     render(){
         return (
-            <Rheader></Rheader>
+            <div className={css.root}>
+                <Rheader></Rheader>
+                <Routers></Routers>
+            </div>
         )
     }
 }

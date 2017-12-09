@@ -1,0 +1,25 @@
+:global(.full)
+    background-image: url('assets/img/fullstar.png')
+:global(.half)
+    background-image: url('assets/img/halfstar.png')
+:global(.empty)
+    background-image: url('assets/img/emptystar.png')
+.starWrapper
+    margin-top: 18px;
+    padding: 2px 0;
+    text-align: center;
+    .star
+        font-size: 0
+        .starItem
+            display: inline-block;
+            background-repeat: no-repeat;
+        &.star48
+            font-size: 0
+            .starItem 
+                width: 20px;
+                height: 20px;
+                margin-right: 22px;
+                background-size: 20px 20px;
+.scrollWrap
+    height 100%
+    overflow hidden
