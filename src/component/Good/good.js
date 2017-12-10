@@ -1,32 +1,18 @@
+
 import React from 'react'
 import Scroll from 'component/common/scroll'
 import Control from '../control/control'
-
 import css from './good.styl'
-const data = require('../.././util/data')
 class Good extends React.Component{
     constructor(props){
         super(props)
-        this.state = {
-            goodInfo:[]
-        }
-    }
-    componentWillMount(){
-        this.setState({
-            goodInfo: data.goodInfo.data
-        });
-        setTimeout(() => {
-            console.log(this.state.goodInfo)
-        },20)
-    }
-    hasScroll  = () => {
-        console.log('滚动')
     }
     /**
      * @output 左侧边栏
      */
+    
     asideLeft(){
-        return this.state.goodInfo.map((v,i)=> {
+        return this.props.goodInfo.map((v,i)=> {
             return (
                 <li className={css.menuItem} 
                 key = {i}>
@@ -41,7 +27,7 @@ class Good extends React.Component{
      * @output 右侧边栏
      */
     asideRight(){
-        return this.state.goodInfo.map((v,i) => {
+        return this.props.goodInfo.map((v,i) => {
             return (
                 <li className={css.foodList}  key={i}>
                     <h1 className={css.title}>
@@ -80,8 +66,10 @@ class Good extends React.Component{
                                             }
                                         </div>
                                         <div className={css.controlWrap}>
-                                            <Control food={item} i={i} index={index} add={this.foodCountAdd}>
-
+                                            <Control food={item} i={i} index={index} 
+                                                decrease={this.props.foodCountDecrease}
+                                                add={this.props.foodCountAdd}
+                                                >
                                             </Control>
                                         </div>
                                     </div>
@@ -93,16 +81,18 @@ class Good extends React.Component{
             )
         })
     }
-    foodCountAdd = (food,index,i) =>{
-        if(!food.counts){
+
+    foodCounDecrease = food =>{
+        if(food.counts === 0){
             food.counts = 0;
+            return;
         };
-        food.counts++;
-        let obj = this.state.goodInfo;
-        obj[i].foods[index].counts = food.counts;
-        this.setState({
-            goodInfo:obj
-        })
+        food.counts--;
+        this.setState({})
+    }
+    
+    hasScroll  = () => {
+        console.log('滚动')
     }
     render(){
         return(

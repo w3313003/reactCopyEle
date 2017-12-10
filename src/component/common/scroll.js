@@ -9,7 +9,7 @@ export default class Scroll extends React.Component{
     componentDidMount = () => {
         setTimeout(() => {
             this._initScroll();
-            this.scroll.on('scroll',()=>{
+            this.scroll.on('scrollEnd',()=>{
                 this.props.isScroll()
             })
         },20);

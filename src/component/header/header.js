@@ -2,7 +2,7 @@
  * @Author: ZhaoJie 
  * @Date: 2017-12-08 16:37:25 
  * @Last Modified by: 赵杰
- * @Last Modified time: 2017-12-09 00:34:04
+ * @Last Modified time: 2017-12-10 03:09:41
  */
 import React from 'react'
 import css from './header.styl'
@@ -36,6 +36,7 @@ class Header extends React.Component {
         }
     }
     componentWillMount() {
+        console.log(this.props)
         this.setState({
             seller : data.seller.data
         });

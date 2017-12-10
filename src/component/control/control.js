@@ -10,7 +10,8 @@ export default class Control extends React.Component{
         return (
             <div className={css.cartcontrol}>
                     {this.props.food.counts > 0 && 
-                    <svg className={css.decrease} aria-hidden="true">
+                    <svg className={css.decrease} aria-hidden="true"
+                    onClick={() => this.props.decrease(this.props.food)}>
                         <use xlinkHref="#icon-weibiaoti-"></use>
                     </svg>}
                     {this.props.food.counts &&
@@ -19,7 +20,7 @@ export default class Control extends React.Component{
                         </div>
                     }
                     <svg className={css.add} aria-hidden="true"  
-                    onClick={() => this.props.add(this.props.food,this.props.index,this.props.i)}>
+                    onClick={() => this.props.add(this.props.food)}>
                         <use xlinkHref="#icon-jiahao-24"></use>
                     </svg>
             </div>
