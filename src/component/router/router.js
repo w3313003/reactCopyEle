@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom'
 import css from './router.styl'
 
-import CommentWrap from '../goodwrap/goodwrap'
+import CommentWrap from 'component/comment/comment'
 import GoodWrap from 'component/goodwrap/goodwrap'
 import Seller from 'component/seller/seller'
 
