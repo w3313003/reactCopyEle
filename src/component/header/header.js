@@ -2,12 +2,11 @@
  * @Author: ZhaoJie 
  * @Date: 2017-12-08 16:37:25 
  * @Last Modified by: 赵杰
- * @Last Modified time: 2017-12-10 03:09:41
+ * @Last Modified time: 2017-12-12 11:10:55
  */
 import React from 'react'
 import css from './header.styl'
 import Star from '../common/star'
-import 'assets/animate.css'
 import {Transition , CSSTransition} from 'react-transition-group';
 const duration = 300;
 
@@ -189,8 +188,10 @@ function Detail(props){
                         <h1 className={css.name}>
                             {props.seller.name}
                         </h1>
-                        <Star rating={props.seller.score}>
+                        <div className={css.starWrapper}>
+                        <Star s48={true} rating={props.seller.score}>
                         </Star>
+                        </div>
                         <div className={css.title}>
                             <div className={css.line}></div>
                             <div className={css.text}>

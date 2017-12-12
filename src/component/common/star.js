@@ -22,7 +22,7 @@ class Star extends React.Component{
         let spans = result.map((v,i) => {
             return (
                 <span className={`${star.starItem} ${v}`} key={i}>
-                    123
+                    
                 </span>
             )
         });
@@ -30,11 +30,14 @@ class Star extends React.Component{
     } 
     render(){
         return (
-            <div className={star.starWrapper}> 
-                <div className={`${star.star} ${star.star48}`}>
+                <div className={`
+                                 ${this.props.s36 && star.star36} 
+                                 ${this.props.s48 && star.star48}
+                                 ${this.props.s24 && star.star24}
+                                `
+                                }>
                     {this.renderStar(this.props.rating)}
                 </div>
-            </div>
         )
     }
 }

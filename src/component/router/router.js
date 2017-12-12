@@ -7,15 +7,12 @@ import {
 } from 'react-router-dom'
 import css from './router.styl'
 
+import CommentWrap from '../goodwrap/goodwrap'
 import GoodWrap from 'component/goodwrap/goodwrap'
-import Scroll from '../common/scroll'
+import Seller from 'component/seller/seller'
+
 class Routers extends React.Component{
     render(){
-        var a  = <div>
-                    <div className={css.routeWrap}>
-                    
-                </div>
-                </div>;
         return (
             <Router>
                 <div className={css.routerWrap}>
@@ -28,27 +25,14 @@ class Routers extends React.Component{
                         <Redirect to="/Good"/>
                     )}/>
                     <Route  path='/Good' component={GoodWrap}/>
-                    <Route  path="/comment" component={Comment}/>
+                    <Route  path="/comment" component={CommentWrap}/>
                     <Route  path="/seller" component={Seller}/>
                 </div>
             </Router>
         )
     }
 }
-function Comment(){
-    return (
-        <div>
-            456
-        </div>
-    )
-}
-function Seller(){
-    return (
-        <div>
-            789
-        </div>
-    )
-}
+
 
 export default Routers
   

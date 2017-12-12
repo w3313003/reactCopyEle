@@ -1,0 +1,149 @@
+:global(.clearfix) {
+    display: inline-block
+}
+:global(.clearfix:after) {
+    display: block;
+    content: ".";
+    height: 0;
+    line-height: 0;
+    clear: both;
+    visibility: hidden;
+}
+:global(.icons)
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: top;
+    margin-right: 6px;
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    &:global(.decrease)
+        background-size: cover
+        background-image: url('assets/img/jian.png')
+    &:global(.discount)
+        background-size: cover
+        background-image: url('assets/img/discount.png')
+    &:global(.special)
+        background-size: cover
+        background-image: url('assets/img/special.png')
+    &:global(.invoice)
+        background-size: cover
+        background-image: url('assets/img/invoice.png')
+    &:global(.guarantee)
+        background-size: cover
+        background-image: url('assets/img/guarantee.png')
+
+
+.seller
+    position: absolute;
+    top: 174px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    .overview
+        position: relative;
+        padding: 18px;
+        .title
+            margin-bottom: 8px;
+            line-height: 14px;
+            color: #07111b;
+            font-size: 14px;
+        .desc
+            padding-bottom: 18px;
+            position: relative;
+            font-size: 0;
+            border-bottom 0.075vh solid #e7e7e7
+            .text
+                display: inline-block;
+                margin-right: 12px;
+                line-height: 18px;
+                vertical-align: top;
+                font-size: 10px;
+                color: #4d555d;
+        .remark
+            display: flex;
+            padding-top: 18px;
+            .block
+                -webkit-box-flex: 1;
+                -ms-flex: 1;
+                flex: 1;
+                text-align: center;
+                border-right: 1px solid rgba(7,17,27,.1);
+                h2
+                    margin-bottom: 4px;
+                    line-height: 10px;
+                    font-size: 10px;
+                    color: #93999f;
+                .content
+                    line-height: 24px;
+                    font-size: 10px;
+                    color: #07111b;
+                    .stress
+                        font-size: 24px;
+                &:last-child
+                    border-right: 0
+    .split
+        width: 100%;
+        height: 16px;
+        border-top: 1px solid rgba(7,17,27,.1);
+        border-bottom: 1px solid rgba(7,17,27,.1);
+        background: #f3f5f7;
+    .bulletin
+        padding: 18px 18px 0;
+        .title
+            margin-bottom: 8px;
+            line-height: 14px;
+            color: #07111b;
+            font-size: 14px
+        .contentWrap
+            padding: 0 12px 16px;
+            position: relative;
+            border-bottom 0.075vh solid #e7e7e7
+            .content
+                line-height: 24px;
+                font-size: 12px;
+                color: #f01414;
+        .supports
+            .supportItem
+                padding: 16px 12px;
+                position: relative;
+                font-size: 0;
+                border-bottom 0.075vh solid #e7e7e7
+                .text
+                    line-height: 16px;
+                    font-size: 12px;
+                    color: #07111b;
+    .pics
+        padding 18px
+        .title
+            margin-bottom: 12px;
+            line-height: 14px;
+            color: #07111b;
+            font-size: 14px;
+        .picWrapper
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            .picList
+                font-size: 0
+                .picitem
+                    display: inline-block;
+                    margin-right: 6px;
+                    width: 120px;
+                    height: 90px;
+    .info
+        padding: 18px 18px 0;
+        color: #07111b;
+        .title
+            padding-bottom: 12px;
+            line-height: 14px;
+            position: relative;
+            font-size: 14px;
+            border-bottom 0.075vh solid #e7e7e7
+        .infoItem
+            padding: 16px 12px;
+            line-height: 16px;
+            position: relative;
+            font-size: 12px;
+            border-bottom 0.075vh solid #e7e7e7

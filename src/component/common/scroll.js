@@ -9,16 +9,24 @@ export default class Scroll extends React.Component{
     componentDidMount = () => {
         setTimeout(() => {
             this._initScroll();
-            this.scroll.on('scrollEnd',()=>{
-                this.props.isScroll()
-            })
-        },20);
+            this._listenScroll();
+        },20)
         
+    }
+    componentWillReceiveProps(){
+        this._initScroll();
+    }
+    _listenScroll(){
+        if(this.props.listenScroll){
+            this.scroll.on('scroll',pos=>{
+            this.props.scrollHandle(pos)
+            })
+        }
     }
     _initScroll(){
         if(!this.scroll){
             this.scroll = new Bscroll(this.refs.scrollWrap,{
-                probeType:this.props.probeType || 2,
+                probeType:this.props.probeType || 3,
                 click : true
             })
         } else {

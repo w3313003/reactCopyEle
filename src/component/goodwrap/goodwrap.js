@@ -34,6 +34,9 @@ export default class GoodWrap extends React.Component{
             let index = this.state.shopList.findIndex(v => v === food);
             this.state.shopList.splice(index,1);
             this.setState({});
+            this.refs.shopcart.setState({
+                isShow:false
+            })
         }
         this.setState({});
     }
@@ -46,7 +49,8 @@ export default class GoodWrap extends React.Component{
                 item.counts = 0
             })
         });
-        this.refs.shopcart.cartToggle()
+        this.refs.shopcart.cartToggle();
+        this.state.shopList = [];
         this.setState({});
     }
     render(){
@@ -62,7 +66,7 @@ export default class GoodWrap extends React.Component{
                           ref = 'shopcart'  
                           GoodList={this.state.shopList}
                           shopcount={this.state.shopList.length}
-                          clearList = {this.clearList}
+                          clearList = {this.clear}
                           foodCountDecrease = {this.foodCountDecrease}
                           foodCountAdd = {this.foodCountAdd}
                 >

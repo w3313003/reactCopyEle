@@ -25,13 +25,13 @@ export default class ShopCart extends React.Component{
         });
         return totalPrice;
     }
+    pay(){
+        console.log(this)
+        let price = this._calculaPrice() + 4;
+        alert(`需支付${price}元`)
+    }
     componentWillReceiveProps(props){
-        if(this.props.shopcount < 1){
-            this.setState({
-                isShow:false
-            })
-            console.log(132)            
-        }
+        
     }
 
     render(){
@@ -63,7 +63,7 @@ export default class ShopCart extends React.Component{
                         <div className={`${css.pay} ${this._calculaPrice() < 20 ?  css.notEnough : css.Enough}`} >
                             { this._calculaPrice() < 20 ?
                                 <span>￥{this.state.enoughMoney}元起送</span> :
-                                <span>去结算</span>
+                                <span onClick={this.pay.bind(this)}>去结算</span>
                             }
                         </div>
                     </div>
