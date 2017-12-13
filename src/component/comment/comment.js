@@ -62,7 +62,7 @@ class RatingSelect extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            RatingList:this.props.RatingList,
+            RatingList : this.props.RatingList,
             positiveList:[],
             negativeList:[],
             currentIndex:'0'
@@ -117,6 +117,26 @@ class RatingSelect extends React.Component{
                 )
             })
         }
+    ListToggle = e => {
+        const el = e.currentTarget,
+              type = +el.dataset.type;
+              if(type === 0) {
+                  this.setState({
+                      currentIndex:type,
+                      RatingList : this.props.RatingList
+                  })
+              } else if(type === 1){
+                  this.setState({
+                    currentIndex:type,
+                      RatingList : this.state.positiveList
+                  })
+              } else if(type === 2){
+                  this.setState({
+                    currentIndex:type,
+                      RatingList : this.state.negativeList
+                  })
+              }
+    }
     render(){
         return (
             <div>
@@ -130,7 +150,8 @@ class RatingSelect extends React.Component{
                             {this.props.RatingList.length}
                         </span>
                     </div>
-                    <div className={`${css.block} ${css.positive} ${this.state.currentIndex == 1 ? css.active : ''}`}
+                    <div 
+                    className={`${css.block} ${css.positive} ${this.state.currentIndex == 1 ? css.active : ''}`}
                     data-type='1'
                     onClick={this.ListToggle}>
                         满意
