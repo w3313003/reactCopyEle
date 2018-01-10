@@ -1,1 +1,1 @@
-##### [预览地址](https://w3313003.github.io/reactCopyEle/)
+##### [预览地址](https://w3313003.github.io/reactCopyEle/build/html)
